@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portfolio of Sruthinlal V K — UI/UX Frontend Developer specializing in responsive web applications and frontend development." />
+  <meta name="theme-color" content="#0a0b0f" />
+  <title>Sruthinlal V K | UI/UX Frontend Developer</title>
+
+  <style>
+    :root {
+      --bg: #08090c;
+      --surface: #101218;
+      --surface-2: #151820;
+      --line: rgba(255, 255, 255, .09);
+      --text: #f6f7f9;
+      --muted: #a6acb8;
+      --accent: #9b7cff;
+      --accent-2: #c7b9ff;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 80% 10%, rgba(155, 124, 255, .13), transparent 30%),
+        radial-gradient(circle at 10% 45%, rgba(91, 110, 255, .07), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    img {
+      display: block;
+      max-width: 100%
+    }
+
+    .container {
+      width: min(var(--max), 92%);
+      margin: auto
+    }
+
+    .eyebrow {
+      color: var(--accent-2);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 50;
+      background: rgba(8, 9, 12, .72);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 850;
+      letter-spacing: -.6px
+    }
+
+    .logo b {
+      color: var(--accent)
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      color: #b8bdc8;
+      font-size: 14px
+    }
+
+    .nav-links a {
+      transition: .2s
+    }
+
+    .nav-links a:hover {
+      color: #fff
+    }
+
+    .nav-cta {
+      padding: 10px 16px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 750;
+      background: rgba(255, 255, 255, .03)
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 140px 0 90px
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 80px;
+      align-items: center
+    }
+
+    h1 {
+      font-size: clamp(48px, 7vw, 88px);
+      line-height: .98;
+      letter-spacing: -5px;
+      max-width: 850px;
+      margin-bottom: 26px
+    }
+
+    h1 span {
+      color: var(--accent)
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 18px
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 32px
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 19px;
+      border-radius: 11px;
+      border: 1px solid var(--line);
+      font-size: 14px;
+      font-weight: 800;
+      transition: .22s;
+      cursor: pointer
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08)
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, .03)
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, .07)
+    }
+
+    .portrait-wrap {
+      position: relative;
+      max-width: 430px;
+      margin-left: auto
+    }
+
+    .portrait-wrap:before {
+      content: "";
+      position: absolute;
+      inset: -18px -18px 18px 18px;
+      border: 1px solid rgba(155, 124, 255, .22);
+      border-radius: 32px;
+    }
+
+    .portrait {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, .45)
+    }
+
+    .portrait-label {
+      position: absolute;
+      left: 22px;
+      bottom: 22px;
+      background: rgba(8, 9, 12, .78);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 13px 16px
+    }
+
+    .portrait-label strong {
+      display: block;
+      font-size: 14px
+    }
+
+    .portrait-label span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 2px
+    }
+
+    section {
+      padding: 105px 0;
+      border-top: 1px solid var(--line)
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: end;
+      margin-bottom: 42px
+    }
+
+    .section-title {
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1;
+      letter-spacing: -2px
+    }
+
+    .section-sub {
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 15px
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 60px
+    }
+
+    .about-text {
+      color: #b9bec8;
+      font-size: 16px;
+      max-width: 700px
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px
+    }
+
+    .stat {
+      padding: 22px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, .045), rgba(255, 255, 255, .015));
+      border: 1px solid var(--line);
+      border-radius: 16px
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 27px;
+      letter-spacing: -1px
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 12px
+    }
+
+    .focus-card {
+      margin-top: 16px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, .018)
+    }
+
+    .focus-title {
+      color: var(--accent-2);
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      margin-bottom: 12px
+    }
+
+    .focus-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 10px 0;
+      border-top: 1px solid var(--line);
+      font-size: 13px
+    }
+
+    .focus-row strong {
+      font-size: 13px
+    }
+
+    .focus-row span {
+      color: var(--muted);
+      text-align: right
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px
+    }
+
+    .skill {
+      padding: 11px 15px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .025);
+      color: #dfe2e8;
+      font-size: 13px
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px
+    }
+
+    .project {
+      min-height: 250px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, .045), rgba(255, 255, 255, .012));
+      transition: .25s
+    }
+
+    .project:hover {
+      transform: translateY(-4px);
+      border-color: rgba(155, 124, 255, .35)
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px
+    }
+
+    .tag {
+      font-size: 11px;
+      font-weight: 850;
+      color: var(--accent-2);
+      letter-spacing: 1.6px;
+      text-transform: uppercase
+    }
+
+    .number {
+      color: #5e6470;
+      font-weight: 800;
+      font-size: 13px
+    }
+
+    .project h3 {
+      font-size: 25px;
+      letter-spacing: -1px;
+      margin: 24px 0 8px
+    }
+
+    .project p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 520px
+    }
+
+    .tech {
+      margin-top: 24px;
+      color: #d4d8df;
+      font-size: 12px
+    }
+
+    .timeline {
+      border-left: 1px solid #343944;
+      padding-left: 28px
+    }
+
+    .job {
+      position: relative;
+      padding-bottom: 38px
+    }
+
+    .job:last-child {
+      padding-bottom: 0
+    }
+
+    .job:before {
+      content: "";
+      position: absolute;
+      left: -34px;
+      top: 7px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(155, 124, 255, .1)
+    }
+
+    .job h3 {
+      font-size: 21px
+    }
+
+    .company {
+      color: var(--accent-2);
+      font-weight: 750;
+      margin-top: 3px
+    }
+
+    .date {
+      color: #747b87;
+      font-size: 12px;
+      margin: 3px 0 11px
+    }
+
+    .job p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 760px
+    }
+
+    .contact-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      padding: 38px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 90% 20%, rgba(155, 124, 255, .16), transparent 35%),
+        rgba(255, 255, 255, .025)
+    }
+
+    .contact-card h3 {
+      font-size: 30px;
+      letter-spacing: -1px
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      margin-top: 7px
+    }
+
+    footer {
+      padding: 30px 0;
+      color: #747b87;
+      font-size: 12px;
+      text-align: center
+    }
+
+    .mobile-menu {
+      display: none
+    }
+
+    @media(max-width:850px) {
+
+      .nav-links,
+      .nav-cta {
+        display: none
+      }
+
+      .mobile-menu {
+        display: block;
+        border: 0;
+        background: none;
+        color: #fff;
+        font-size: 24px
+      }
+
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 50px
+      }
+
+      .portrait-wrap {
+        margin: 0 auto;
+        max-width: 390px
+      }
+
+      .projects {
+        grid-template-columns: 1fr
+      }
+
+      .section-head {
+        display: block
+      }
+
+      .section-sub {
+        margin-top: 14px
+      }
+
+      h1 {
+        letter-spacing: -3px
+      }
+    }
+
+    @media(max-width:520px) {
+      .hero {
+        padding-top: 125px
+      }
+
+      section {
+        padding: 80px 0
+      }
+
+      .stats {
+        grid-template-columns: 1fr
+      }
+
+      .contact-card {
+        padding: 28px;
+        display: block
+      }
+
+      .contact-card .btn {
+        margin-top: 22px
+      }
+
+      h1 {
+        font-size: 48px
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="#home">Sruthinlal<b>.</b></a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a class="nav-cta" href="#contact">Let's talk</a>
+        <button class="mobile-menu" aria-label="Open menu">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">UI/UX · Frontend · Web</div>
+          <h1>Hi, I'm <span>Sruthinlal.</span><br>UI/UX Frontend Developer.</h1>
+          <p class="hero-copy">
+            I design and build responsive, user-focused digital experiences,
+            combining a designer's eye with practical frontend development.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#projects">View my work</a>
+            <a class="btn btn-secondary" href="#contact">Let's connect</a>
+          </div>
+        </div>
+
+        <div class="portrait-wrap">
+          <img class="portrait" src="assets/profile.png" alt="Sruthinlal V K — UI/UX Frontend Developer">
+          <div class="portrait-label">
+            <strong>Sruthinlal V K</strong>
+            <span>UI/UX Frontend Developer</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">About</div>
+            <h2 class="section-title">Design thinking.<br>Frontend execution.</h2>
+          </div>
+          <p class="section-sub">
+            Experienced in responsive interfaces, reusable frontend components,
+            business applications and practical UI development.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <p class="about-text">
+            I work across UI design and frontend development, translating visual
+            designs into responsive and reusable web interfaces. My experience
+            includes dashboards, business applications, pharmacy solutions and
+            academic platforms, with a focus on clean layouts and usable
+            experiences.
+          </p>
+
+          <div>
+            <div class="stats">
+              <div class="stat"><strong>9+</strong><span>Years in UI / Web</span></div>
+              <div class="stat"><strong>2+</strong><span>Years with Angular</span></div>
+              <div class="stat"><strong>4</strong><span>Years with React.js</span></div>
+              <div class="stat"><strong>Web & Mobile</strong><span>Frontend development</span></div>
+            </div>
+
+            <div class="focus-card">
+              <div class="focus-title">Frontend Focus</div>
+              <div class="focus-row"><strong>Angular</strong><span>Websites & Web Applications</span></div>
+              <div class="focus-row"><strong>React.js</strong><span>Web Applications</span></div>
+              <div class="focus-row"><strong>React Native</strong><span>Mobile Applications</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Toolkit</div>
+            <h2 class="section-title">Skills & technologies</h2>
+          </div>
+          <p class="section-sub">The tools I use across design, frontend development and delivery.</p>
+        </div>
+
+        <div class="skills">
+          <span class="skill">HTML5</span><span class="skill">CSS3</span>
+          <span class="skill">JavaScript</span><span class="skill">TypeScript</span>
+          <span class="skill">SCSS</span><span class="skill">Bootstrap</span>
+          <span class="skill">Angular</span><span class="skill">React.js</span>
+          <span class="skill">React Native</span><span class="skill">Figma</span>
+          <span class="skill">Photoshop</span><span class="skill">Illustrator</span>
+          <span class="skill">Responsive Design</span><span class="skill">UI/UX</span>
+          <!-- <span class="skill">Jest</span><span class="skill">Cypress</span>
+          <span class="skill">Playwright</span><span class="skill">Git</span>
+          <span class="skill">AWS</span><span class="skill">Docker</span> -->
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Selected work</div>
+            <h2 class="section-title">Projects</h2>
+          </div>
+          <p class="section-sub">A selection of frontend and UI/UX work from my professional experience.</p>
+        </div>
+
+        <div class="projects">
+          <article class="project">
+            <div>
+              <div class="project-top"><span class="tag">Web + Mobile</span><span class="number">01</span></div>
+              <h3>Pharmacy Plus</h3>
+              <p>Responsive interfaces for pharmacy-related web and mobile experiences, focused on practical application
+                workflows.</p>
+            </div>
+            <div class="tech">Angular · React Native · HTML · CSS · Bootstrap</div>
+          </article>
+
+          <article class="project">
+            <div>
+              <div class="project-top"><span class="tag">Business Apps</span><span class="number">02</span></div>
+              <h3>ERP · POS · CRM · HRM</h3>
+              <p>User interfaces for dashboards, forms, tables and administrative workflows across business
+                applications.</p>
+            </div>
+            <div class="tech">Angular · JavaScript · HTML · CSS · Bootstrap</div>
+          </article>
+
+          <article class="project">
+            <div>
+              <div class="project-top"><span class="tag">Academic Platform</span><span class="number">03</span></div>
+              <h3>SH College Online</h3>
+              <p>Frontend interface work for an academic management platform with responsive layouts and UI
+                implementation.</p>
+            </div>
+            <div class="tech">HTML · CSS · JavaScript · Bootstrap</div>
+          </article>
+
+          <article class="project">
+            <div>
+              <div class="project-top"><span class="tag">Web Design</span><span class="number">04</span></div>
+              <h3>Web Design & HTML Conversion</h3>
+              <p>Visual layout and HTML/CSS implementation work focused on converting designs into structured responsive
+                pages.</p>
+            </div>
+            <div class="tech">Photoshop · HTML · CSS · JavaScript</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Career</div>
+            <h2 class="section-title">Experience</h2>
+          </div>
+          <p class="section-sub">My professional journey in UI/UX and frontend development.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="job">
+            <h3>UI/UX Frontend Developer</h3>
+            <div class="company">Onesoft Technologies · Kochi</div>
+            <div class="date">Mar 2023 — Nov 2025</div>
+            <p>Worked on responsive web and mobile interfaces using Angular, React/React Native, HTML, CSS, JavaScript
+              and Bootstrap. Converted designs into reusable UI components and worked on ERP/POS and Pharmacy Plus
+              applications.</p>
+          </div>
+
+          <div class="job">
+            <h3>Web Designer / Frontend</h3>
+            <div class="company">Aspatersoft</div>
+            <div class="date">Earlier Experience</div>
+            <p>Worked on web design, visual layouts and HTML/CSS/JavaScript implementation, including inner-page design
+              and conversion work.</p>
+          </div>
+
+          <div class="job">
+            <h3>Frontend & UI Work</h3>
+            <div class="company">Krisinventa</div>
+            <div class="date">Earlier Experience</div>
+            <p>Contributed to frontend interfaces for academic management systems and supported UI design and responsive
+              web implementation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div>
+            <div class="eyebrow">Contact</div>
+            <h3>Let's build something useful.</h3>
+            <p>Open to UI/UX and frontend opportunities.</p>
+          </div>
+          <!-- Replace the placeholder email before publishing. -->
+          <a class="btn btn-primary" href="mailto:YOUR_EMAIL@example.com">Email me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Sruthinlal V K · UI/UX Frontend Developer</div>
+  </footer>
+</body>
+
+</html>
